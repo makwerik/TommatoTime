@@ -20,13 +20,13 @@ class PomodoroApp(QMainWindow, Ui_MainWindow):
         # Таймер для глаз
         self.eye_timer = QTimer(self)
         self.eye_timer.timeout.connect(self.remind_eye_rest)
-        self.eye_rest_interval = 20 * 6  # Каждые 20 мин. нужно напоминание
+        self.eye_rest_interval = 20 * 60  # Каждые 20 мин. нужно напоминание
         self.time_worked = 0  # Время, которое пользователь работал
 
         # Таймер для осанки
         self.back_timer = QTimer(self)
         self.back_timer.timeout.connect(self.check_back)
-        self.back_interval = 10 * 6
+        self.back_interval = 10 * 60
         self.time_worked_back = 0
 
 
