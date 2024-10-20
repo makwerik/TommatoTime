@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-from PyQt5.QtCore import QTimer, QTime
+from PyQt5.QtCore import QTimer, QTime, Qt
 from pomodoro_timer import Ui_MainWindow
 
 
@@ -121,6 +121,8 @@ class PomodoroApp(QMainWindow, Ui_MainWindow):
         msg.setWindowTitle("Перерыв для глаз")
         msg.setText("Вы работаете уже 20 минут. Сделайте перерыв и посмотрите вдаль на 20 секунд.")
         msg.setStandardButtons(QMessageBox.Ok)
+        # Установить окно поверх всех окон
+        msg.setWindowFlags(msg.windowFlags() | Qt.WindowStaysOnTopHint)
         msg.exec_()
 
     def check_back(self):
@@ -136,6 +138,8 @@ class PomodoroApp(QMainWindow, Ui_MainWindow):
         msg.setIcon(QMessageBox.Information)
         msg.setText("Выпрямите осанку")
         msg.setStandardButtons(QMessageBox.Ok)
+        # Установить окно поверх всех окон
+        msg.setWindowFlags(msg.windowFlags() | Qt.WindowStaysOnTopHint)
         msg.exec_()
 
 
